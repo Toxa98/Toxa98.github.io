@@ -1,0 +1,25 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+	<input type="text" id ="n1">
+	<button onclick="myfunc()">check</button>
+
+			<script type="text/javascript">
+		function myfunc(){
+		var v1 = document.getElementById('n1').value.split('');
+		var q = true;
+		var i;
+		while (q){
+			i = v1.indexOf('-');
+			if (i!= -1){
+				v1.splice(i,1);
+				v1[i] = v1[i].toUpperCase();
+				console.log(v1.join(''));
+			}
+			else {q = false;}
+		} 
+		document.write(v1.join(''))
+}
+	</script>
+</body>
