@@ -1,0 +1,43 @@
+<!Doctype HTML>
+<head>
+</head>
+<table id='tab'>
+	
+</table>
+<script type="text/javascript">
+
+k = 0;
+	var cur = new Date();
+  var st = new Date(cur.getYear(), cur.getMonth()-1, 0).getDay();
+  var last = new Date(cur.getYear(), cur.getMonth()+1, 0).getDate();
+	var tab = document.getElementById('tab');
+	for (var j = 1; j <= 5; j++) {
+		console.log(k);
+		newtr = document.createElement('tr');
+		tab.appendChild(newtr);
+			console.log(k);
+		
+		for (var i = 1; i <= 7; i++) {
+			console.log(k);
+
+			k++;
+			if (k == 1) {
+				i = st;
+				for (var q=0; q<st-1; q++){
+				newtd = document.createElement('td');
+				newtd.innerHTML = ' ';	
+				newtr.appendChild(newtd);				
+				}
+			}
+
+			newtd = document.createElement('td');
+			if (k == cur.getDate()){newtd.style.backgroundColor = "red";}
+			newtd.innerHTML = k;
+			newtr.appendChild(newtd);
+			if (k == last){break;}
+
+	}
+}
+</script>
+
+</body>
