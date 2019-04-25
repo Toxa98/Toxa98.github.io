@@ -1,0 +1,36 @@
+<!Doctype HTML>
+<head>
+</head>
+<body onload="">
+	<input type="text" id ="add">
+	<button onclick="but()">push</button>
+	<label id ="lst"></label> 
+
+
+			<script type="text/javascript">
+function subjects()
+{
+var lst = ['math','programing','literature','physics'];
+this.get = function get(){
+	 document.getElementById("lst").innerHTML = lst;
+}
+this.set = function(item){
+if (!(item in lst)){
+	lst.push(item);
+}
+}
+}
+
+
+var sub = new subjects();
+sub.get();
+function but()
+{
+
+sub.set(document.getElementById("add").value);
+sub.get();
+
+}
+	</script>
+
+</body>

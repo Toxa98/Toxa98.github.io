@@ -1,0 +1,31 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+	<ol id = 'dd'>	
+	</ol>
+
+			<script type="text/javascript">
+var Personal = {
+		'director' : 'a',
+		'manager' : 'b',
+		'manager1' : 'c',
+		'manager2' : 'd',
+		'manager3' : 'e',
+		'manager4' : 'f'
+	} 	
+
+var Personal2 = Object.assign(Personal);
+
+function tostring(per){
+	dd = document.getElementById('dd') ;
+for (i in per) 
+{
+newLi = document.createElement('li');
+newLi.innerHTML = i + '  ' + per[i];
+	dd.appendChild(newLi);
+}
+}
+tostring(Personal2);
+	</script>
+</body>
