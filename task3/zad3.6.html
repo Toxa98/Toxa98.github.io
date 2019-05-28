@@ -1,0 +1,36 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+<label>
+	3.6. Создайте приложение, отображающее текст в рамке, и содержащее 2 кнопки «Начать» и «Остановить». При щелчке по первой кнопке цвет рамки меняется произвольным образом (переливается всеми цветами радуги). При щелчке по второй кнопке этот процесс прекращается.
+</label>
+<br>
+	<p id = 'q'>один</p>
+<script type="text/javascript">
+function fun(c){
+		function randrgb() {
+		rgb = '#';
+		for (var i = 0; i <= 2; i++) {
+			rgb = Math.round(Math.random() * (256 + 1)- 0.5);	 	 
+		  	var hex = Number(rgb).toString(16);
+	  		if (hex.length < 2) {
+	       		hex = "0" + hex;
+  				}
+         rgb +=hex;
+			}
+ 	return rgb;
+ 	}
+ 
+	q = document.getElementById('q');
+	while (c)
+	{	
+		q.style.borderColor = setTimeout(randrgb(), 300);
+	} 	
+}
+</script>
+	<button onclick="fun(true)">start</button>
+	<button onclick="fun(false)">stop</button>
+
+
+</body>

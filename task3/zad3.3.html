@@ -1,0 +1,43 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+	<label>3.3. Создать web-страницу калькулятор, производящий основные арифметические операции.</label><br>
+<select id='1'>
+	<option>маленький</option>
+	<option>большой</option>
+</select>
+
+<select id='2'>
+	<option>сыром</option>
+	<option>салатом</option>
+	<option>картофелем</option>
+</select>
+приправа<input type="checkbox" id="pr">
+майонез<input type="checkbox" id="mz">
+
+
+<script type="text/javascript">
+function bur(){
+	dict = {
+	'маленький' :[50 ,20 ],
+
+	'большой' :[100 , 40 ],
+
+	'сыром' :[ 10 ,  20 ],
+
+	'салатом' :[ 20 ,  5 ],
+
+	'картофелем' :[ 15 ,  10 ]
+	}
+	var t=0,k=0;
+	v1 = document.getElementById('1').value
+	v2 = document.getElementById('2').value
+	if (document.getElementById('pr').checked ==true){t+=15;}
+	if (document.getElementById('mz').checked ==true){t+=20;k+=5;}
+	alert("стоимость   " + (dict[v1][0]+dict[v2][0]+t) + "    тугриков\nэн. ценнсоть    "+(dict[v1][1]+dict[v2][1]+k)+"   калорий");
+}
+</script>
+<button onclick="bur()">make</button>
+
+</body>
