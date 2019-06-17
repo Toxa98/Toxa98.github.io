@@ -49,6 +49,7 @@ var	dct = {
 		v = +document.getElementById('q').value;
 		w = document.getElementById('w');
 		st = "";
+		if (v<0) {st+= "minus"; v *=-1;}
 		if (v<100000){
 		if (v >= 1000){
 			st += dec(Math.floor(v/1000)) + " thousand";
