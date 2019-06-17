@@ -1,0 +1,66 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+<label>
+	3.9. Реализовать скрипт, позволяющий записать заданное число словами.
+</label>
+<br>
+<input type="number" name="q" id="q" onchange="ch()">
+<label id="w"></label>
+<script type="text/javascript">
+var	dct = {
+		0:"",
+		1:" one",
+		2:" two",
+		3:" three",
+		4:" four",
+		5:" five",
+		6:" six",
+		7:" seven",
+		8:" eight",
+		9:" nine",
+		10:" ten",
+		11:" eleven",
+		12:" twelve",
+		13:" thirteen",
+		14:" fourteen",
+		15:" fifteen",
+		16:" sixteen",
+		17:" seventeen",
+		18:" eightteen",
+		19:" nineteen",
+		20:" twelnty",
+		30:" thirty",
+		40:" fourty",
+		50:" fifty",
+		60:" sixty",
+		70:" seventy",
+		80:" eighty",
+		90:" ninety",
+	}
+	function dec(num){
+		if (num in dct)
+			return dct[num];
+		console.log(Math.floor(num/10)*10);
+		return dct[Math.floor(num/10)*10]+dct[num%10]
+	}
+	function ch(){
+		v = +document.getElementById('q').value;
+		w = document.getElementById('w');
+		st = "";
+		if (v<100000){
+		if (v >= 1000){
+			st += dec(Math.floor(v/1000)) + " thousand";
+			if ((v-2000)>0) st+="s";
+			v = v%1000}
+		if (v >= 100){
+			st += dec(Math.floor(v/100)) + " hundred";
+			if ((v-200)>0) st+="s";
+			v %= 100}
+		st += dec(v);}
+		else st = "it's very big number"
+		w.innerHTML = st;
+	}
+</script>
+</body>

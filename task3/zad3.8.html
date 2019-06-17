@@ -1,0 +1,64 @@
+
+<!Doctype HTML>
+<head>
+	<style type="text/css">
+   .q { 
+    width: 40px; 
+    height: 40px; 
+    background: #fc0; 
+    padding: 5px; 
+    border: solid 1px black; 
+    float: left; 
+    position: absolute; 
+    top: 100px; 
+    left: 70px; 
+   }
+	</style>
+</head>
+<body>
+<label>Реализовать скрипт, позволяющий перетаскивать мышью изображение. Пользователь пытается мышью перетащить изображение; затем он отпускает кнопку мыши и перемещает указатель в нужное место (при этом он может удерживать или не удерживать кнопку мыши в нажатом положении); остановившись в нужном месте, пользователь отпускает кнопку мыши или щелкает ею, чтобы прекратить перемещение изображения.
+</label>
+<br>
+<div id='q' class = 'q' onmouseup="kek(true)" onmousedown="kek(false)"></div>
+<script type="text/javascript">
+    var i = false;
+    var time;
+    var x,y;
+    document.addEventListener("mousemove", f);
+    function clk(){
+        if (!i)
+            {i=true;
+            var e = window.event;
+            console.log("on");
+            t = setInterval(start, 10)}
+        else
+            {
+                i = false;
+                console.log("off");
+                clearInterval(t);
+            }
+        }
+
+    function kek(isup){
+        if (isup){
+            if ((Date.now()-time)>200) clk();
+        }
+        else
+        {
+            clk();
+            time = Date.now();
+        }
+    }
+    function f(){
+        var e = window.event;
+        x = e.clientY-20+"px";
+        y = e.clientX-20+"px";     
+  
+    }
+    function start(){
+        var div = document.getElementById('q');
+        div.style.top = x;
+        div.style.left = y;
+    }
+
+</script>

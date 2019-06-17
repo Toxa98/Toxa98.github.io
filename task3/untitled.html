@@ -1,0 +1,38 @@
+
+<!Doctype HTML>
+<head>
+	<style type="text/css">
+   .q { 
+    width: 40px; 
+    height: 40px; 
+    background: #fc0; 
+    padding: 5px; 
+    border: solid 1px black; 
+    float: left; 
+    position: absolute; 
+    top: 100px; 
+    left: 70px; 
+   }
+	</style>
+</head>
+<body>
+<label>Реализовать скрипт, позволяющий перетаскивать мышью изображение. Пользователь пытается мышью перетащить изображение; затем он отпускает кнопку мыши и перемещает указатель в нужное место (при этом он может удерживать или не удерживать кнопку мыши в нажатом положении); остановившись в нужном месте, пользователь отпускает кнопку мыши или щелкает ею, чтобы прекратить перемещение изображения.
+</label>
+<br>
+<div id='q' class = 'q' onclick="click()"></div>
+<script type="text/javascript">
+    i = false;
+    function click(){
+        if (i=false)
+            {i=true}
+        else
+            {
+                var e = window.event;
+                i = false;
+                div.top = e.clientY;
+                div.left = e.clientX;
+            }
+
+    }
+
+</script>

@@ -1,0 +1,50 @@
+
+<!Doctype HTML>
+<head>
+	<style type="text/css">
+   .q { 
+    width: 40px; 
+    height: 40px; 
+    background: #fc0; 
+    padding: 5px; 
+    border: solid 1px black; 
+    float: left; 
+    position: absolute; 
+    top: 100px; 
+    left: 70px; 
+   }
+	</style>
+</head>
+<body>
+<label>
+3.7. Реализовать линейное движение. Оно реализуется 2-мя функциями. Первая функция осуществляет подготовку исходных данных и вызывает метод setInterval(), где в качестве второго параметра указывается вторая функция, реализующая движение.  В ней изменяются значения top и left стиля перемещаемого элемента.
+</label>
+<br>
+	<button onclick="timer = setInterval(go, 100)">start</button>
+	<button onclick="clearInterval(timer)">stop</button>
+<div id='q' class = 'q'></div>
+<script type="text/javascript">
+var t=Math.random();
+var l=Math.sqrt(1-t*t);
+function go(s){
+	var o = document.getElementById('q');
+	var top =o.offsetTop; 
+	var left =o.offsetLeft;
+	if (top > 400) {	
+		t = -Math.random();
+		l=Math.sign(l)*Math.sqrt(1-t*t);}
+if (left > 600) {	
+		t = Math.random();
+		l= -Math.sqrt(1-t*t);}
+if (top < 60) {	
+		t = Math.sign(l)*Math.random();
+		l=-Math.sqrt(1-t*t);}
+if (left < 60) {	
+		t = Math.sign(t)*Math.random();
+		l=Math.sqrt(1-t*t);}
+	o.style.top =top + t*5+'px';
+	o.style.left = left + l*5+'px';
+	console.log(t,l);
+}
+</script>
+</body>
